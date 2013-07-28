@@ -4,8 +4,7 @@ set :port, 8000
 set :bind, '127.0.0.1'
 
 get '/' do
-    @message = "Do your chores!!"
-    erb :index
+    erb :intro
 end
 
 
@@ -41,7 +40,7 @@ get '/rubbish/:name/:from' do
     erb :index
 end 
 
-get '/kitches/:name/:from' do
+get '/kitchen/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
     @message ="The dishes have been piling up in the sink, #{name}! Thanks, #{from}."
@@ -49,4 +48,19 @@ get '/kitches/:name/:from' do
     erb :index
 end 
 
+
+get '/me/:from' do
+    from = params[:from].capitalize
+    @message ="I'll just do all the cleaning, shall I? Thanks, but no thanks! - #{from}."
+    @image_path = 'shoe.jpg'
+    erb :index
+end 
+
+get '/thanks/:name/:from' do
+    name = params[:name].capitalize
+    from = params[:from].capitalize
+    @message ="Thanks for all of your hard work around the house, #{name}! I really appreciate it! From, #{from} X"
+    @image_path = 'shoe.jpg'
+    erb :index
+end 
 
