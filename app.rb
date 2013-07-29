@@ -43,6 +43,13 @@ get '/kitchen/:name/:from' do
     erb :index
 end 
 
+get '/garden/:name/:from' do
+    name = params[:name].capitalize
+    from = params[:from].capitalize
+    @message ="Your turn to mow the lawn, #{name}! Thanks, #{from}."
+    erb :index
+end 
+
 
 get '/me/:from' do
     from = params[:from].capitalize
