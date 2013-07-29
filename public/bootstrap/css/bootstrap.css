@@ -229,6 +229,9 @@ body {
   color: #333333;
   background-color: #ffffff;
   background: url(/subtle_grunge/subtle_grunge.png) repeat 0 0;
+   -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+       filter: alpha(opacity=50);
+       opacity: .8;
 }
 
 a {
@@ -620,6 +623,7 @@ a:focus {
   margin-right: auto;
   margin-left: auto;
   *zoom: 1;
+  width: 800px;
 }
 
 .container:before,
@@ -653,6 +657,7 @@ a:focus {
 p {
   font-family: 'Josefin Sans', sans-serif;
   margin: 0 0 10px;
+  font-size: 16px;
 }
 
 .lead {
@@ -768,7 +773,7 @@ h3 {
 
 h1 {
   font-family: 'Dancing Script', cursive;
-  font-size: 38.5px;
+  font-size: 55px;
 }
 
 h2 {
@@ -777,7 +782,7 @@ h2 {
 
 h3 {
   font-family: 'Crimson Text', serif;
-  font-size: 24.5px;
+  font-size: 28px;
 }
 
 h4 {
