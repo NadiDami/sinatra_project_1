@@ -11,6 +11,7 @@ require 'pony'
 
 Pony.options = { 
   :via => 'smtp',
+  :headers => { 'Content-Type' => 'text/html' },
   :via_options => {
       :address              => 'smtp.gmail.com',
       :port                 => '587',
@@ -37,9 +38,10 @@ get '/email' do
 end
 
 post '/email' do
-    name = params[:name]
+    @name = params[:name]
     email = params[:email]
-    Pony.mail(:to => email, :subject => "#{name} has a message for you!", :body => erb(:email, :layout => false))
+    @url = params[:url]
+    Pony.mail(:to => email, :subject => "Someone has a message for you...", :body => erb(:email, :layout => false))
     erb :thanks
 end
 
