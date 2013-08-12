@@ -37,6 +37,8 @@ get '/email' do
 end
 
 post '/email' do
+    name = params[:name]
+    email = params[:email]
     Pony.mail(:to => email, :subject => "#{name} has a message for you!", :body => erb(:email, :layout => false))
     erb :thanks
 end
