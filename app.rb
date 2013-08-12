@@ -31,6 +31,15 @@ Pony.options = {
 get '/' do
     erb :intro
 end
+ 
+get '/email' do
+    erb :form
+end
+
+post '/email' do
+    Pony.mail(:to => email, :subject => "#{name} has a message for you!", :body => erb(:email, :layout => false))
+    erb :thanks
+end
 
 get '/clean/:name/:from' do
     name = params[:name].capitalize
