@@ -35,6 +35,7 @@ get '/' do
 end
  
 get '/email' do
+    @url = params[:url]
     erb :form
 end
 
@@ -49,6 +50,7 @@ end
 get '/clean/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Clean the house, #{name}! Thanks, #{from}."
     erb :index
 end 
@@ -56,6 +58,7 @@ end
 get '/bedroom/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Your bedroom could do with a tidy, #{name}! Thanks, #{from}."
     erb :index
 end 
@@ -63,6 +66,7 @@ end
 get '/vacuum/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Isn't it your turn to do the vacuuming, #{name}? Thanks, #{from}."
     erb :index
 end 
@@ -70,6 +74,7 @@ end
 get '/rubbish/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Please take out the bins, #{name}! Thanks, #{from}."
     erb :index
 end 
@@ -77,6 +82,7 @@ end
 get '/kitchen/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="The dishes have been piling up in the sink, #{name}! Thanks, #{from}."
     erb :index
 end 
@@ -84,6 +90,7 @@ end
 get '/garden/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Your turn to mow the lawn, #{name}! Thanks, #{from}."
     erb :index
 end 
@@ -91,6 +98,7 @@ end
 
 get '/me/:from' do
     from = params[:from].capitalize
+    @url = request.url
     @message ="I'll just do all the cleaning, shall I? Thanks, but no thanks! - #{from}."
     erb :index
 end 
@@ -98,6 +106,7 @@ end
 get '/thanks/:name/:from' do
     name = params[:name].capitalize
     from = params[:from].capitalize
+    @url = request.url
     @message ="Thanks for all of your hard work around the house, #{name}! I really appreciate it! From, #{from} X"
     erb :index
 end 
