@@ -1,1 +1,3 @@
-Testing to see what happens when two people try and push some changes to the same file to the develop branch, without having done a git pull before pushing.
+Testing to see what happens  two people try  push some changes to the same file to the develop branch, without having giiiiiit before pushing.
+
+"I'm sorry, Hamilton. I failed at the testing exercise! Please forgive me."
